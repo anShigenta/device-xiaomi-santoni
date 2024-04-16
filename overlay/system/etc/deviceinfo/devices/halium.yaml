@@ -1,0 +1,9 @@
+santoni:
+  Vendor: Xiaomi
+  DeviceType: phone
+  PrettyName: Xiaomi Redmi 4X
+  GridUnit: 16
+  SupportedOrientations:
+    - Portrait
+    - Landscape
+    - InvertedLandscape
