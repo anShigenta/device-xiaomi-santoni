@@ -10,6 +10,7 @@ deviceinfo_kernel_cmdline="androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-h
 deviceinfo_kernel_clang_compile="false"
 deviceinfo_kernel_apply_overlay="false"
 deviceinfo_generate_bootimg="true"
+deviceinfo_has_recovery_partition="true"
 deviceinfo_bootimg_qcdt="false"
 deviceinfo_bootimg_os_version="9"
 deviceinfo_bootimg_os_patch_level="2021-02-01"
