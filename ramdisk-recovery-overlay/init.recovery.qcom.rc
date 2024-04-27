@@ -10,10 +10,6 @@ on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 
-on post-fs-data
-    start setup_fake_cache
-    wait_for_prop halium.datamount.done 1
-
 # separate copy needed to use /sbin/linker64 instead of /system/bin/linker64
 service sbinqseecomd /sbin/qseecomd
     oneshot
@@ -24,7 +20,3 @@ service sbinqseecomd /sbin/qseecomd
 
 on property:ro.crypto.state=encrypted
     start sbinqseecomd
-
-service setup_fake_cache /bin/sh /setup_fake_cache.sh
-   disabled
-   oneshot
