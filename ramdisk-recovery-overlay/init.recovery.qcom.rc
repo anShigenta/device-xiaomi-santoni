@@ -20,3 +20,11 @@ service sbinqseecomd /sbin/qseecomd
 
 on property:ro.crypto.state=encrypted
     start sbinqseecomd
+
+on post-fs-data
+   start setup_fake_cache
+   wait_for_prop halium.datamount.done 1
+
+service setup_fake_cache /bin/sh /setup_fake_cache.sh
+   disabled
+   oneshot
