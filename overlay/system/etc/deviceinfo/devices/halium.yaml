@@ -7,3 +7,4 @@ santoni:
     - Portrait
     - Landscape
     - InvertedLandscape
+  FlashlightSysfsPath: "/sys/class/leds/torch-light0/brightness"

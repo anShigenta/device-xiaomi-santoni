@@ -246,3 +246,7 @@ ACTION=="add", KERNEL=="block/platform/soc/7464900.sdhci/by-name/frp", OWNER="sy
 ACTION=="add", KERNEL=="block/platform/soc/624000.ufshc/by-name/frp", OWNER="system", GROUP="system", MODE="0600"
 ACTION=="add", KERNEL=="block/platform/soc/1da4000.ufshc/by-name/frp", OWNER="system", GROUP="system", MODE="0600"
 ACTION=="add", KERNEL=="sensors", OWNER="root", GROUP="system", MODE="0660"
+
+# Set torch-light permissions so indicator-power can access it
+ACTION=="add|change", SUBSYSTEM=="leds", KERNEL=="torch-light0", RUN+="/bin/chgrp android_input /sys/class/leds/%k/brightness"
+ACTION=="add|change", SUBSYSTEM=="leds", KERNEL=="torch-light0", RUN+="/bin/chmod g+w /sys/class/leds/%k/brightness"
